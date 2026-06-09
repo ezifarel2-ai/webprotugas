@@ -1,0 +1,9 @@
+.git
+.idea
+.vscode
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/debugbar/*
+node_modules
+db/init.sql
