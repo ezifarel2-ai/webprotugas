@@ -44,6 +44,7 @@
                         <thead>
                             <tr>
                                 <th data-sortable="true">#</th>
+                                <th data-sortable="true">ID Anggota</th>
                                 <th data-sortable="true">Nama Anggota</th>
                                 <th data-sortable="true">Jenis Kelamin</th>
                                 <th data-sortable="true">No Telepon</th>
@@ -63,6 +64,10 @@
                             <tr>
                                 <td data-sortable="true">
                                     <?= $no=$no+1;?>
+                                </td>
+
+                                <td data-sortable="true">
+                                    <?= $data['id_anggota'];?>
                                 </td>
 
                                 <td data-sortable="true">

@@ -53,3 +53,17 @@ $routes->post('/admin/simpan-data-buku', 'Admin::simpan_data_buku');
 $routes->get('/admin/edit-data-buku/(:alphanum)', 'Admin::edit_data_buku/$1');
 $routes->post('/admin/update-data-buku', 'Admin::update_data_buku');
 $routes->get('/admin/hapus-data-buku/(:alphanum)', 'Admin::hapus_data_buku/$1');
+
+// Routes untuk module peminjaman
+$routes->get('/admin/data-transaksi-peminjaman','Admin::data_transaksi_peminjaman');
+$routes->get('/admin/detail-peminjaman/(:alphanum)', 'Admin::detail_peminjaman/$1');
+$routes->get('/admin/peminjaman-step-1', 'Admin::peminjaman_step1');
+$routes->get('/admin/peminjaman-step-2', 'Admin::peminjaman_step2');
+$routes->post('/admin/peminjaman-step-2', 'Admin::peminjaman_step2');
+$routes->get('/admin/simpan-temp-pinjam/(:alphanum)','Admin::simpan_temp_pinjam/$1');
+$routes->get('/admin/hapus-temp/(:alphanum)', 'Admin::hapus_peminjaman/$1');
+$routes->get('/admin/simpan-transaksi-peminjaman','Admin::simpan_transaksi_peminjaman');
+$routes->get('/admin/laporan-peminjaman', 'Admin::laporan_peminjaman');
+$routes->get('/admin/cetak-laporan-peminjaman','Admin::cetak_laporan_peminjaman');
+$routes->get('/admin/pengembalian-buku', 'Admin::pengembalian_buku');
+$routes->get('/admin/proses-pengembalian/(:alphanum)','Admin::proses_pengembalian/$1');
