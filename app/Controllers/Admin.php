@@ -852,6 +852,30 @@ class Admin extends BaseController
             }
         }
 
+        public function input_data_buku()
+        {
+            if(session()->get('ses_id')=="" or session()->get('ses_user')=="" or session()->get('ses_level')==""){
+                session()->setFlashdata('error','Silakan login terlebih dahulu!');
+                return redirect()->to(base_url('admin/login-admin'));
+            }
+            else{
+                $uri = service('uri');
+                $pages = $uri->getSegment(2);
+
+                $modelKategori = new M_Kategori;
+                $modelRak = new M_Rak;
+
+                $data['pages'] = $pages;
+                $data['data_kategori'] = $modelKategori->getDataKategori(['is_delete_kategori' => '0'])->getResultArray();
+                $data['data_rak'] = $modelRak->getDataRak(['is_delete_rak' => '0'])->getResultArray();
+
+                echo view('Backend/Template/header', $data);
+                echo view('Backend/Template/sidebar', $data);
+                echo view('Backend/MasterBuku/input-buku', $data);
+                echo view('Backend/Template/footer', $data);
+            }
+        }
+
          
         public function simpan_data_buku()
         {
